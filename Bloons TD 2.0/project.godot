@@ -10,8 +10,12 @@ config_version=4
 
 [application]
 
-config/name="TD grup"
-config/icon="res://icon.png"
+config/name="Bloons TD 2.0"
+run/main_scene="res://joc.tscn"
+
+[display]
+
+window/size/resizable=false
 
 [gui]
 
