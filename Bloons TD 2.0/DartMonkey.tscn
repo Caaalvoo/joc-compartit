@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Monkeys/Dart/DartMonkey_Shooting.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DartMonkey.gd" type="Script" id=2]
+[ext_resource path="res://Rango.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 458.132
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 85.0
+
+[node name="DartMonkey" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Rango" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Rango de visio" type="CollisionShape2D" parent="Rango"]
+shape = SubResource( 1 )
+
+[node name="Collision mono" type="CollisionShape2D" parent="."]
+position = Vector2( 3, 16 )
+shape = SubResource( 2 )
+
+[node name="DartMonkey_Shooting" parent="." instance=ExtResource( 1 )]
+frame = 8
+
+[connection signal="body_entered" from="Rango" to="Rango" method="_on_Area2D_body_entered"]
