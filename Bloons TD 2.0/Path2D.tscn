@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Globus/GlobusVermell/GlobusVermell.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Globus/GlobusVermell/GlobusVermell.gd" type="Script" id=2]
+[ext_resource path="res://PathFollow2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://spawner.gd" type="Script" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -10,12 +10,6 @@ _data = {
 
 [node name="Path2D" type="Path2D"]
 curve = SubResource( 1 )
+script = ExtResource( 4 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2( -31, 524 )
-rotation = -0.0980432
-rotate = false
-loop = false
-
-[node name="GlobusVermell" parent="PathFollow2D" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[node name="PathFollow2D" parent="." instance=ExtResource( 1 )]
