@@ -11,6 +11,5 @@ rotate = false
 loop = false
 script = ExtResource( 3 )
 
-[node name="GlobusVermell" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-scale = Vector2( 0.5, 0.5 )
+[node name="GlobusVermell" parent="." instance=ExtResource( 1 )]
 script = ExtResource( 2 )
