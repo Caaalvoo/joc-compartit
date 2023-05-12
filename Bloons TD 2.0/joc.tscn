@@ -19,9 +19,10 @@ visible = false
 [node name="Monos" type="Node2D" parent="."]
 
 [node name="DartMonkey" parent="Monos" instance=ExtResource( 3 )]
+position = Vector2( 319, 253 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="Path2D" parent="." instance=ExtResource( 4 )]
 
 [node name="Area2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 170, 492 )
+position = Vector2( 193, 482 )
