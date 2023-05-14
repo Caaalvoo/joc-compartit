@@ -19,6 +19,6 @@ autostart = true
 wait_time = 15.0
 
 [connection signal="timeout" from="Ronda" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Ronda" to="." method="_on_Ronda_1_timeout"]
 [connection signal="timeout" from="Ronda" to="." method="_on_Ronda_timeout"]
+[connection signal="timeout" from="Ronda" to="." method="_on_Ronda_1_timeout"]
 [connection signal="timeout" from="delay_rondes" to="." method="_on_delay_rondes_timeout"]
