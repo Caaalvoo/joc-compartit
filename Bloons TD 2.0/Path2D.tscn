@@ -11,8 +11,14 @@ _data = {
 curve = SubResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.225
+[node name="Ronda" type="Timer" parent="."]
+wait_time = 0.2
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="delay_rondes" type="Timer" parent="."]
+wait_time = 15.0
+
+[connection signal="timeout" from="Ronda" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Ronda" to="." method="_on_Ronda_1_timeout"]
+[connection signal="timeout" from="Ronda" to="." method="_on_Ronda_timeout"]
+[connection signal="timeout" from="delay_rondes" to="." method="_on_delay_rondes_timeout"]
