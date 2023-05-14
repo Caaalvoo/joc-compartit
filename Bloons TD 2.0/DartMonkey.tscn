@@ -28,9 +28,10 @@ rotation = -1.5708
 frame = 5
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.7
 autostart = true
 
 [connection signal="body_entered" from="Rango" to="." method="_on_Rango_body_entered"]
 [connection signal="body_entered" from="Rango" to="Rango" method="_on_Rango_body_entered"]
 [connection signal="body_exited" from="Rango" to="." method="_on_Rango_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

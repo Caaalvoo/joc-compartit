@@ -16,7 +16,6 @@ func _process(delta):
 func _on_Rango_body_entered(body):
 	if body.is_in_group("Globus"):
 		globus.append(body)
-		disparar()
 
 
 func _on_Rango_body_exited(body):
@@ -24,6 +23,14 @@ func _on_Rango_body_exited(body):
 		globus.erase(body)
 
 
-func disparar():
-	var dard = escena_dard.instance()
-	add_child(dard)
+
+
+
+func _on_Timer_timeout():
+	if primer_globus:
+		if globus:
+			if primer_globus == globus[0]:
+				var dard = escena_dard.instance()
+				dard.global_position = global_position
+				dard.direccio = primer_globus
+				get_parent().add_child(dard)
