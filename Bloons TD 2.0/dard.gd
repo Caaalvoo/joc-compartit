@@ -20,22 +20,7 @@ func _process(delta):
 		global_position += moviment
 
 
-	
-
-"""
-var globus = get_node("res://Rango.tscn")
-
-func _ready():
-	add_to_group("Dard")
-
-func _process(delta):
-	moviment = moviment * velocitat
-	var direccio = look_at(globus.pos_globus)
-	moviment = Vector2.ZERO
-	moviment = moviment.move_toward(direccio, delta)
-	moviment = moviment.normalized() * velocitat
-	global_position += moviment
-	"""
 
 
-
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

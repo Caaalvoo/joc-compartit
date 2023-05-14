@@ -16,7 +16,7 @@ wait_time = 0.2
 autostart = true
 
 [node name="delay_rondes" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 20.0
 
 [connection signal="timeout" from="Ronda" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Ronda" to="." method="_on_Ronda_timeout"]

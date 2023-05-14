@@ -10,3 +10,7 @@ func _on_Area2D_body_entered(body):
 		if body.color_globus == "vermell":
 			vida_general.vida -= 1
 		body.queue_free()
+	if body.is_in_group("Globus"):
+		if body.color_globus == "blau":
+			vida_general.vida -= 2
+		body.queue_free()
