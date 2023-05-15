@@ -10,6 +10,7 @@ var ronda
 var necessari = 70
 var mono
 var construir = false
+var agafat = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	vida = 100
@@ -23,12 +24,15 @@ func _process(delta):
 	$Diners.text = "Diners:" + str(diners)
 	$Vida.text = "Vida: " + str(vida)
 	$Ronda.text = "Ronda: " + str(ronda)
+	if vida == 0:
+		get_tree().quit()
 
 
 
 func _on_Button_pressed():
-	if diners >= necessari:
+	
+	if diners >= necessari and agafat == false:
 		mono = escena_mono.instance()
 		add_child(mono)
 		construir = true
-
+		agafat = true

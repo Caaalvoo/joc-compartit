@@ -16,14 +16,16 @@ func _process(delta):
 			primer_globus = globus[0]
 			mirar = primer_globus.global_position
 			look_at(mirar)
+		get_parent().agafat = false
 	else:
 		$Rang.visible = true
 		global_position = get_global_mouse_position()
 		if posar == true:
 			$Rang.modulate = Color(0,0,0)
 			if Input.is_action_just_pressed("clic"):
-				construir = false
 				get_parent().diners -= 70
+				construir = false
+				
 		else:
 			$Rang.modulate = Color(1,1,1)
 	
