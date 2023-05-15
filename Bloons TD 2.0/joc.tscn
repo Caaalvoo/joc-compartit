@@ -78,8 +78,16 @@ script = ExtResource( 3 )
 position = Vector2( 942, 301 )
 shape = SubResource( 1 )
 
+[node name="Sortir" type="Button" parent="."]
+margin_left = 886.0
+margin_top = 540.0
+margin_right = 999.0
+margin_bottom = 579.0
+text = "Sortir"
+
 [connection signal="body_entered" from="Zona_Prohibida" to="Zona_Prohibida" method="_on_Zona_Prohibida_body_entered"]
 [connection signal="body_exited" from="Zona_Prohibida" to="Zona_Prohibida" method="_on_Zona_Prohibida_body_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="Sortir" to="." method="_on_Sortir_pressed"]

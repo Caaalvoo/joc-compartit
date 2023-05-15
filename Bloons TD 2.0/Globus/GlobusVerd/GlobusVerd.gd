@@ -11,7 +11,7 @@ onready var money = get_node("/root/Node2D")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Globus")
-	$Sprite.modulate = Color(0.35,0.9,0)
+	$Sprite.modulate = Color(0.2,1,0)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

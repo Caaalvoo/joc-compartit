@@ -107,18 +107,6 @@ func _on_Ronda_timeout():
 		var nouGlobus = escena_globus_verd.instance()
 		add_child(nouGlobus)
 		globus_verd_creats += 1
-#	if globus_creats < globus_rondes[ronda] and tipus_globus[ronda] == "vermell":
-#		var nouGlobus = escena_globus_vermell.instance()
-#		add_child(nouGlobus)
-#		globus_creats += 1
-#	elif globus_creats < globus_rondes[ronda] and tipus_globus[ronda] == "blau":
-#		var nouGlobus = escena_globus_blau.instance()
-#		add_child(nouGlobus)
-#		globus_creats += 1
-#	elif globus_creats < globus_rondes[ronda] and tipus_globus[ronda] == "verd":
-#		var nouGlobus = escena_globus_verd.instance()
-#		add_child(nouGlobus)
-#		globus_creats += 1
 	else:
 		$Ronda.stop()
 		$delay_rondes.start()

@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://has_perdut.gd" type="Script" id=1]
+
+[node name="has_perdut" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 462.0
+margin_top = 143.0
+margin_right = 562.0
+margin_bottom = 174.0
+text = "Has perdut!
+"
+
+[node name="sortir_menu" type="Button" parent="."]
+margin_left = 355.0
+margin_top = 222.0
+margin_right = 658.0
+margin_bottom = 323.0
+text = "Sortir al menú principal"
+
+[connection signal="pressed" from="sortir_menu" to="." method="_on_sortir_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Jugar" type="Button" parent="."]
+margin_left = 394.0
+margin_top = 179.0
+margin_right = 594.0
+margin_bottom = 229.0
+text = "Jugar"
+
+[node name="Sortir" type="Button" parent="."]
+margin_left = 396.0
+margin_top = 266.0
+margin_right = 596.0
+margin_bottom = 316.0
+text = "Sortir"
+
+[connection signal="pressed" from="Jugar" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="Sortir" to="." method="_on_Sortir_pressed"]
