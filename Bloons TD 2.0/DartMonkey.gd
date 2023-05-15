@@ -5,18 +5,25 @@ var escena_dard = preload("res://dard.tscn")
 var mirar
 var construir = true
 var posar = false
+var primer_canvi = false
+var tamany_grup = 0
+var entro = -1
+var surto = 0
 
 func _ready():
 	add_to_group("Defenses")
 	
 func _process(delta):
+	tamany_grup = get_tree().get_nodes_in_group("Estic").size()
 	if construir == false:
 		$Rang.visible = false
 		if globus != []:
 			primer_globus = globus[0]
 			mirar = primer_globus.global_position
 			look_at(mirar)
-		get_parent().agafat = false
+		if primer_canvi == true:
+			get_parent().agafat = false
+			primer_canvi = false
 	else:
 		$Rang.visible = true
 		global_position = get_global_mouse_position()
@@ -25,6 +32,7 @@ func _process(delta):
 			if Input.is_action_just_pressed("clic"):
 				get_parent().diners -= 70
 				construir = false
+				primer_canvi = true
 		else:
 			$Rang.modulate = Color(1,1,1)
 	
@@ -60,23 +68,16 @@ func _on_Timer_timeout():
 
 func _on_posarsn_area_entered(area):
 	if area.is_in_group("Zona_prohibida"):
+		area.add_to_group("Estic")
+		entro +=1
 		posar = false
 
 
 
 func _on_posarsn_area_exited(area):
 	if area.is_in_group("Zona_prohibida"):
-		posar = true
+		area.remove_from_group("Estic")
+		surto +=1
+		if surto == entro:
+			posar = true
 
-
-
-func _on_colisionposar_area_entered(area):
-	if area.is_in_group("No_posar"):
-		posar = false
-
-
-
-
-func _on_colisionposar_area_exited(area):
-	if area.is_in_group("No_posar"):
-		posar = true

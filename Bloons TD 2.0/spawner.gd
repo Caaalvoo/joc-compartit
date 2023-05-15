@@ -18,12 +18,12 @@ var ronda2 = {
 }
 var ronda3 = {
 	"vermell":10,
-	"blau":50,
+	"blau":25,
 	"verd":0
 }
 var ronda4 = {
-	"vermell":0,
-	"blau":0,
+	"vermell":5,
+	"blau":5,
 	"verd":5
 }
 var ronda5 = {
@@ -32,27 +32,27 @@ var ronda5 = {
 	"verd":3
 }
 var ronda6 = {
-	"vermell":0,
+	"vermell":5,
 	"blau":0,
 	"verd":10
 }
 var ronda7 = {
-	"vermell":10,
-	"blau":50,
+	"vermell":20,
+	"blau":30,
 	"verd":0
 }
 var ronda8 = {
-	"vermell":40,
+	"vermell":25,
 	"blau":40,
-	"verd":40
+	"verd":20
 }
 var ronda9 = {
-	"vermell":50,
+	"vermell":30,
 	"blau":50,
 	"verd":50
 }
 var ronda10 = {
-	"vermell":75,
+	"vermell":50,
 	"blau":75,
 	"verd":75
 }
@@ -63,8 +63,8 @@ var ronda11 = {
 }
 
 var ronda = 0
-var delay_globus = [0.6, 0.8, 1, 0.2,0.5, 0.2,0.5, 0.2,0.5, 0.2,0.5, 0.2]
-var v = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+var delay_globus = [0.6, 0.8, 1, 0.2, 0.3, 0.2, 0.3, 0.2, 0.2, 0.2, 0.2, 0.1]
+var v = [1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 5, 10]
 var v_globus = v[0]
 var globus_creats = 0
 var globus_vermell_creats = 0
@@ -89,7 +89,7 @@ func _process(delta):
 	if text_ronda != null:
 		text_ronda.ronda = ronda+1
 	if ronda == len(globus_rondes)-1:
-		$delay_rondes.stop()
+		get_tree().change_scene("res://Has_guanyat.tscn")
 		
 func _on_Ronda_timeout():
 	var vermells_ronda = globus_rondes[ronda]["vermell"]

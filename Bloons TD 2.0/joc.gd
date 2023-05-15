@@ -13,9 +13,8 @@ var construir = false
 var agafat = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	vida = 100
-	diners = 150
+	diners = 170
 	$Diners.text = "Diners:" + str(diners)
 	$Vida.text = "Vida: " + str(vida)
 	$Preu.text = "Preu: 70"
@@ -32,14 +31,14 @@ func _process(delta):
 
 
 func _on_Button_pressed():
-	
 	if diners >= necessari and agafat == false:
+		agafat = true
 		mono = escena_mono.instance()
 		add_child(mono)
 		construir = true
-		agafat = true
+
 
 
 
 func _on_Sortir_pressed():
-	get_tree().quit()
+	get_tree().change_scene("res://Menu.tscn")

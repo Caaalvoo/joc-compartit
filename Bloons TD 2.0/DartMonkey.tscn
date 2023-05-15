@@ -10,23 +10,21 @@
 [sub_resource type="CircleShape2D" id=3]
 radius = 345.444
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 13.0
-height = 16.0001
+[sub_resource type="CircleShape2D" id=4]
+radius = 14.0357
 
-[sub_resource type="CapsuleShape2D" id=5]
-radius = 13.0
-height = 16.0001
+[sub_resource type="CircleShape2D" id=5]
+radius = 14.0
 
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 13.0
-height = 16.0001
+[sub_resource type="CircleShape2D" id=6]
+radius = 14.0
 
 [node name="DartMonkey" type="StaticBody2D"]
 rotation = 1.5708
 script = ExtResource( 2 )
 
 [node name="Rango" type="Area2D" parent="."]
+visible = false
 scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 3 )
 
@@ -43,6 +41,7 @@ wait_time = 0.7
 autostart = true
 
 [node name="Rang" type="Sprite" parent="."]
+visible = false
 position = Vector2( -0.177123, 0.280577 )
 scale = Vector2( 2.70862, 2.70703 )
 texture = ExtResource( 4 )
