@@ -1,15 +1,26 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Monkeys/Dart/DartMonkey_Shooting.tscn" type="PackedScene" id=1]
 [ext_resource path="res://DartMonkey.gd" type="Script" id=2]
 [ext_resource path="res://Rango.gd" type="Script" id=3]
 [ext_resource path="res://range.png" type="Texture" id=4]
+[ext_resource path="res://colisionposar.gd" type="Script" id=5]
+[ext_resource path="res://posarsn.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 345.444
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 24.0208
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 13.0
+height = 16.0001
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 13.0
+height = 16.0001
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 13.0
+height = 16.0001
 
 [node name="DartMonkey" type="StaticBody2D"]
 rotation = 1.5708
@@ -23,6 +34,7 @@ script = ExtResource( 3 )
 shape = SubResource( 3 )
 
 [node name="DartMonkey_Shooting" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3.99999, 2.00001 )
 rotation = -1.5708
 scale = Vector2( 0.25, 0.25 )
 
@@ -36,12 +48,22 @@ scale = Vector2( 2.70862, 2.70703 )
 texture = ExtResource( 4 )
 
 [node name="Collision_mono" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+position = Vector2( 6, -2.17199e-05 )
+shape = SubResource( 4 )
 
 [node name="posarsn" type="Area2D" parent="."]
+script = ExtResource( 6 )
 
-[node name="Collisio_posar" type="CollisionShape2D" parent="posarsn"]
-shape = SubResource( 2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="posarsn"]
+position = Vector2( 6, -2.17199e-05 )
+shape = SubResource( 5 )
+
+[node name="colisionposar" type="Area2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionposar"]
+position = Vector2( 6, -2.17199e-05 )
+shape = SubResource( 6 )
 
 [connection signal="body_entered" from="Rango" to="." method="_on_Rango_body_entered"]
 [connection signal="body_entered" from="Rango" to="Rango" method="_on_Rango_body_entered"]
@@ -49,3 +71,5 @@ shape = SubResource( 2 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="posarsn" to="." method="_on_posarsn_area_entered"]
 [connection signal="area_exited" from="posarsn" to="." method="_on_posarsn_area_exited"]
+[connection signal="area_entered" from="colisionposar" to="." method="_on_colisionposar_area_entered"]
+[connection signal="area_exited" from="colisionposar" to="." method="_on_colisionposar_area_exited"]

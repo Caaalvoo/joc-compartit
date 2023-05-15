@@ -25,7 +25,6 @@ func _process(delta):
 			if Input.is_action_just_pressed("clic"):
 				get_parent().diners -= 70
 				construir = false
-				
 		else:
 			$Rang.modulate = Color(1,1,1)
 	
@@ -67,4 +66,17 @@ func _on_posarsn_area_entered(area):
 
 func _on_posarsn_area_exited(area):
 	if area.is_in_group("Zona_prohibida"):
+		posar = true
+
+
+
+func _on_colisionposar_area_entered(area):
+	if area.is_in_group("No_posar"):
+		posar = false
+
+
+
+
+func _on_colisionposar_area_exited(area):
+	if area.is_in_group("No_posar"):
 		posar = true

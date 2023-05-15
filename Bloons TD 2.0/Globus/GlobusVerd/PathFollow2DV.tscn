@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Globus/GlobusBlau/GlobusBlau.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Globus/GlobusVerd/PathFollow2DV.gd" type="Script" id=2]
+[ext_resource path="res://Globus/GlobusVerd/GlobusVerd.gd" type="Script" id=3]
+
+[node name="PathBlau" type="PathFollow2D"]
+position = Vector2( -31, 524 )
+rotation = -0.0980432
+rotate = false
+loop = false
+script = ExtResource( 2 )
+
+[node name="GlobusVerd" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 3 )
