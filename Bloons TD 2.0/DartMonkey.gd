@@ -6,15 +6,13 @@ var mirar
 var construir = true
 var posar = false
 var primer_canvi = false
-var tamany_grup = 0
 var entro = -1
 var surto = 0
 
 func _ready():
 	add_to_group("Defenses")
 	
-func _process(delta):
-	tamany_grup = get_tree().get_nodes_in_group("Estic").size()
+func _process(_delta):
 	if construir == false:
 		$Rang.visible = false
 		if globus != []:
@@ -68,7 +66,6 @@ func _on_Timer_timeout():
 
 func _on_posarsn_area_entered(area):
 	if area.is_in_group("Zona_prohibida"):
-		area.add_to_group("Estic")
 		entro +=1
 		posar = false
 
@@ -76,7 +73,6 @@ func _on_posarsn_area_entered(area):
 
 func _on_posarsn_area_exited(area):
 	if area.is_in_group("Zona_prohibida"):
-		area.remove_from_group("Estic")
 		surto +=1
 		if surto == entro:
 			posar = true

@@ -85,7 +85,7 @@ func _ready():
 	globus_rondes.append(ronda10)
 	globus_rondes.append(ronda11)
 
-func _process(delta):
+func _process(_delta):
 	if text_ronda != null:
 		text_ronda.ronda = ronda+1
 	if ronda == len(globus_rondes)-1:

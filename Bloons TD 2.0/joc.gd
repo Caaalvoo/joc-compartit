@@ -21,7 +21,7 @@ func _ready():
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Diners.text = "Diners:" + str(diners)
 	$Vida.text = "Vida: " + str(vida)
 	$Ronda.text = "Ronda: " + str(ronda)
