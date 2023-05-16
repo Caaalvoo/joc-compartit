@@ -19,22 +19,20 @@ margin_right = 594.0
 margin_bottom = 229.0
 text = "Jugar"
 
+[node name="Credits" type="Button" parent="."]
+margin_left = 394.0
+margin_top = 253.0
+margin_right = 594.0
+margin_bottom = 303.0
+text = "Crèdits"
+
 [node name="Sortir" type="Button" parent="."]
-margin_left = 396.0
-margin_top = 266.0
-margin_right = 596.0
-margin_bottom = 316.0
+margin_left = 394.0
+margin_top = 331.0
+margin_right = 594.0
+margin_bottom = 381.0
 text = "Sortir"
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.67
-anchor_right = 0.945
-margin_left = -89.08
-margin_top = 576.0
-margin_right = -59.68
-margin_bottom = 594.0
-rect_scale = Vector2( 1.4, 1.4 )
-text = "Fet per Jordi Piera, Arnau Carrasco i Oriol Calvo."
-
 [connection signal="pressed" from="Jugar" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Sortir" to="." method="_on_Sortir_pressed"]

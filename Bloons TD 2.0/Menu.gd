@@ -19,8 +19,8 @@ func _ready():
 func _on_Jugar_pressed():
 	get_tree().change_scene("res://joc.tscn")
 
-
-
-
 func _on_Sortir_pressed():
 	get_tree().quit()
+
+func _on_Credits_pressed():
+	get_tree().change_scene("res://Credits.tscn")
