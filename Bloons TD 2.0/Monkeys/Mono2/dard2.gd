@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 
-var velocitat = 10
+var velocitat = 30
 var moviment = Vector2.ZERO
 var direccio
 var mirar = Vector2.ZERO
-var vida_globus = 1
+var vida_globus = 2
 var impacte = false
 func _ready():
 	add_to_group("Dard")

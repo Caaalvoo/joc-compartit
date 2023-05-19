@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Map/Death_Valley.png" type="Texture" id=1]
 [ext_resource path="res://Map/Cami i zona morta/Zona_Prohibida.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Map/Cami i zona morta/Zona_Prohibida.gd" type="Script" id=7]
 [ext_resource path="res://700x511_SliderInterior.jpg" type="Texture" id=8]
 [ext_resource path="res://Mono botiga.png" type="Texture" id=9]
+[ext_resource path="res://recycle_bin_empty_15554.png" type="Texture" id=10]
+[ext_resource path="res://Mono2 botiga.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 82.25, 303 )
@@ -34,7 +36,7 @@ position = Vector2( 1235, 320.125 )
 scale = Vector2( 1.07143, 1.25587 )
 texture = ExtResource( 8 )
 
-[node name="Button" type="Button" parent="."]
+[node name="Mono1" type="Button" parent="."]
 margin_left = 894.0
 margin_top = 200.0
 margin_right = 980.0
@@ -85,9 +87,36 @@ margin_right = 997.0
 margin_bottom = 578.0
 text = "Sortir al menú"
 
+[node name="Mono2" type="Button" parent="."]
+margin_left = 896.0
+margin_top = 324.0
+margin_right = 983.0
+margin_bottom = 405.0
+icon = ExtResource( 11 )
+expand_icon = true
+
+[node name="brossa2" type="Button" parent="."]
+margin_left = 913.0
+margin_top = 468.0
+margin_right = 968.0
+margin_bottom = 532.0
+icon = ExtResource( 10 )
+expand_icon = true
+
+[node name="Preu2" type="Label" parent="."]
+margin_left = 896.0
+margin_top = 406.0
+margin_right = 957.0
+margin_bottom = 420.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Preu: 175"
+
 [connection signal="body_entered" from="Zona_Prohibida" to="Zona_Prohibida" method="_on_Zona_Prohibida_body_entered"]
 [connection signal="body_exited" from="Zona_Prohibida" to="Zona_Prohibida" method="_on_Zona_Prohibida_body_exited"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Mono1" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Mono1" to="." method="_on_Mono1_pressed"]
+[connection signal="pressed" from="Mono1" to="Mono1" method="_on_Button_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="Sortir_al_menu" to="." method="_on_Sortir_pressed"]
+[connection signal="pressed" from="Mono2" to="." method="_on_Mono2_pressed"]
+[connection signal="pressed" from="brossa2" to="." method="_on_brossa2_pressed"]

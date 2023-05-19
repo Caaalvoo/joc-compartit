@@ -35,11 +35,12 @@ text = "Director tècnic:
 Subdirectors tècnics:
 	Arnau Carrasco
 	Jordi Piera
+Programador principal:
+	Oriol Calvo
 Director audiovisual: 
 	Jordi Piera
 Director artístic: 
-	Arnau Carrasco
-"
+	Arnau Carrasco"
 align = 1
 valign = 1
 script = ExtResource( 1 )

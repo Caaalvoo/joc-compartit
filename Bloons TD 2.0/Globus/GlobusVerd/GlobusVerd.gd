@@ -22,7 +22,8 @@ func canvi_vida(nova_vida):
 
 
 func _on_hitboxb_body_entered(body):
-	if body.is_in_group("Dard"):
-		canvi_vida(vida-1)
+	if body.is_in_group("Dard") and body.impacte == false:
+		body.impacte = true
+		canvi_vida(vida-body.vida_globus)
 		money.diners += 1
 		body.queue_free()
