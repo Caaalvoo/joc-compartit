@@ -14,6 +14,7 @@ var mono
 var mono2
 var agafat = false
 var num_mono = 0
+var activar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

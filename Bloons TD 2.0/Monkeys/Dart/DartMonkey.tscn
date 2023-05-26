@@ -57,6 +57,12 @@ script = ExtResource( 2 )
 position = Vector2( 6, -2.17199e-05 )
 shape = SubResource( 5 )
 
+[node name="Tempsmillora" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+
 [node name="colisionposar" type="Area2D" parent="."]
 script = ExtResource( 3 )
 
@@ -70,5 +76,7 @@ shape = SubResource( 6 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="posarsn" to="." method="_on_posarsn_area_entered"]
 [connection signal="area_exited" from="posarsn" to="." method="_on_posarsn_area_exited"]
-[connection signal="area_entered" from="colisionposar" to="." method="_on_colisionposar_area_entered"]
-[connection signal="area_exited" from="colisionposar" to="." method="_on_colisionposar_area_exited"]
+[connection signal="mouse_entered" from="posarsn" to="." method="_on_posarsn_mouse_entered"]
+[connection signal="mouse_exited" from="posarsn" to="." method="_on_posarsn_mouse_exited"]
+[connection signal="timeout" from="Tempsmillora" to="." method="_on_Tempsmillora_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

@@ -2,19 +2,28 @@ extends StaticBody2D
 var globus = []
 var primer_globus
 var escena_dard = preload("res://dard.tscn")
+var escena_millora = preload("res://Millora.tscn")
 var mirar
 var construir = true
 var posar = false
 var primer_canvi = false
 var entro = -1
 var surto = 0
-
+var millorat = false
+var primer = 0
+var maus = false
+var millorant = false
 func _ready():
 	add_to_group("Defenses")
+	primer = 0
+	get_parent().activar = false
 	
 func _process(_delta):
 	if construir == false:
-		$Rang.visible = false
+		if millorant == false:
+			$Rang.visible = false
+		else:
+			pass
 		if globus != []:
 			primer_globus = globus[0]
 			mirar = primer_globus.global_position
@@ -31,9 +40,15 @@ func _process(_delta):
 				get_parent().diners -= 70
 				construir = false
 				primer_canvi = true
+				$Timer2.start()
 		else:
 			$Rang.modulate = Color(1,1,1)
-	
+	if millorat == false and construir == false and get_parent().activar == true:
+		if Input.is_action_just_released("clic") and maus == true  and  primer != 0:
+			get_parent().activar = false
+			var millora = escena_millora.instance()
+			millora.global_position = Vector2(450,550)
+			get_parent().add_child(millora)
 
 
 func _on_Rango_body_entered(body):
@@ -77,3 +92,32 @@ func _on_posarsn_area_exited(area):
 		if surto == entro:
 			posar = true
 
+func millorar():
+	$Rango.scale = Vector2(0.7,0.7)
+	$Rang.scale = Vector2(5,5)
+	millorant = true
+	$Tempsmillora.start()
+	$Rang.visible = true
+
+
+func _on_Tempsmillora_timeout():
+	$Rang.visible = false
+	$Tempsmillora.stop()
+
+
+
+func _on_posarsn_mouse_entered():
+	maus = true
+
+
+
+
+func _on_posarsn_mouse_exited():
+	maus = false
+
+
+
+func _on_Timer2_timeout():
+	get_parent().activar = true
+	primer = 1
+	$Timer2.stop()
