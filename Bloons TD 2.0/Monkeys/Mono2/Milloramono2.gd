@@ -18,7 +18,7 @@ func _ready():
 
 
 func _on_Sortir_pressed():
-	mono.activar = true
+	money.activar = true
 	queue_free()
 
 

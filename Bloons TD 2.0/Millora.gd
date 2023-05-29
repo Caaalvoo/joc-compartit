@@ -25,5 +25,5 @@ func _on_millorar_pressed():
 		queue_free()
 	
 func _on_Sortir_pressed():
-	mono.activar = true
+	money.activar = true
 	queue_free()
